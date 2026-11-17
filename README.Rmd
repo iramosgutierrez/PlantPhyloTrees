@@ -15,53 +15,84 @@ knitr::opts_chunk$set(
 
 # PlantPhyloTrees
 
-<!-- badges: start -->
-[![R-CMD-check](https://github.com/EcologyR/templateRpackage/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EcologyR/templateRpackage/actions/workflows/R-CMD-check.yaml)
-[![Codecov test coverage](https://codecov.io/gh/EcologyR/templateRpackage/branch/master/graph/badge.svg)](https://app.codecov.io/gh/EcologyR/templateRpackage?branch=master)
-`r badger::badge_lifecycle("experimental")`
-`r badger::badge_repostatus("WIP")`
-<!-- `r badger::badge_codefactor("ecologyr/templaterpackage")` -->
-<!-- badges: end -->
-
-
 ## Installation
 
 ``` {r}
 # install.packages("devtools")
-devtools::install_github("EcologyR/templateRpackage")
+devtools::install_github("iramosgutierrez/PlantPhyloTrees")
 ```
 
-The code to create this package is available [here](https://gist.github.com/Pakillo/999e34301c56011138ef164363502465).
+
+## Downloading the trees
+
+To download just the final trees in R.
+This can alternatively be done by hand at the Zenodo website <https://doi.org/10.5281/zenodo.21512447>
 
 
-## Example
+**NOTE: This function will not be working until the paper is published and the Zenodo repository is published**
+```{r download_trees, eval = FALSE}
+library(PlantPhyloTrees)
 
-This is a basic example which shows you how to solve a common problem:
+download_path <- "/home/user/treedata" #for example...
+dir.exists(download_path) # I'm checking the folder exists first!
 
-```{r example}
-# library(templateRpackage)
-## basic example code
+download_trees(path =  download_path)
+
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+Now you can individually rename the tips in your tree using a table. 
 
-```{r cars}
-summary(cars)
+Just make sure you create a data frame storing your wanted names in a "name" column, and the tip name in a "tip" column.
+
+To make sure no errors are made, PlantPhyloTrees will not let you rename in case you have repeated names or any tips are not included in the tree. Please check your data carefully first!
+
+Using parameter 'drop' can be really helpful. If you want to use a table just to change several names (but keep everything else), use `drop = FALSE`. Else, if you want to generate a tree including just the species included in your table, use `drop = TRUE`. In this case, make sure yo have all your species included in the 'name' column (no matter if it matches the 'tip' one!)
+
+```{r rename_1tree, echo = TRUE, eval = FALSE}
+
+tree1 <- ape::read.tree(paste0(download_path, "/", "downloaded_tree_1.tre")) # I select the first tree, for example
+
+# This is my table; the first columns are the names I want to match my data; the tip column stores the names in the tree
+example_table <- data.frame("name" = c("Rosmarinus_officinalis", "Rosmarinus_tomentosus", "Nepeta_beltranii"),
+                            "tip"  = c("Salvia_rosmarinus",      "Salvia_granatensis",    "Nepeta_hispanica") )
+
+
+tree_renamed <- rename_tips(tree = tree1, name_table = example_table, drop = TRUE) # we get a 3-species phylogeny
+
+
+
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
+Now, this can take long if has to be performed for every single downloaded tree (although useful if you just want to rename one or several trees).
 
-You can also embed plots, for example:
+In case you want to perform a bulk renaming procedure, there is a way to rename every single tree stored in a defined directory using the same structure explained before.
 
-```{r pressure, echo = TRUE, eval = FALSE}
-plot(pressure)
+
+```{r rename_multiple, echo = TRUE, eval = FALSE}
+
+
+# We are going to use the same table as before!
+example_table <- data.frame("name" = c("Rosmarinus_officinalis", "Rosmarinus_tomentosus", "Nepeta_beltranii"),
+                            "tip"  = c("Salvia_rosmarinus",      "Salvia_granatensis",    "Nepeta_hispanica") )
+
+tree_directory <- "/home/user/treedata/" 
+renaming_path  <- "/home/user/treedata_renamed/" 
+
+
+rename_tips_dir(dir = original_directory,
+                path = renaming_path,
+                name_table = example_table, 
+                drop = TRUE )
+
+# There we have it! A folder with just the tree we want, and with the names matching our data!
+
+
+
 ```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
 
 ## Citation
 
-If using this package, please cite it:
+If using this package, please cite it, as well as the paper and the dataset!
 
 ```{r comment=NA}
 citation("PlantPhyloTrees")

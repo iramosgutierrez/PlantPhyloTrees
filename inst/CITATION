@@ -1,5 +1,6 @@
-citHeader("To cite templateRpackage in publications use:")
+citHeader("To cite PlantPhyloTrees in publications use:")
 
+c(
 citEntry(
   entry    = "Manual",
   title    = "PlantPhyloTrees",
@@ -12,4 +13,4 @@ citEntry(
   url      = "https://github.com/iramosgutierrez/PlantPhyloTrees/",
   textVersion = paste("Ramos-Gutierrez, I. 2026. PlantPhyloTrees", "v0.0.1",
                       "https://github.com/iramosgutierrez/PlantPhyloTrees/")
-)
+))
