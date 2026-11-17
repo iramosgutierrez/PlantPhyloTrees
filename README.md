@@ -8,86 +8,6 @@
 ``` r
 # install.packages("devtools")
 devtools::install_github("iramosgutierrez/PlantPhyloTrees")
-#> Using GitHub PAT from the git credential store.
-#> Downloading GitHub repo iramosgutierrez/PlantPhyloTrees@HEAD
-#> rlang    (1.2.0  -> 1.3.0 ) [CRAN]
-#> glue     (1.8.0  -> 1.8.1 ) [CRAN]
-#> cli      (3.6.5  -> 3.6.6 ) [CRAN]
-#> magrittr (2.0.4  -> 2.0.5 ) [CRAN]
-#> digest   (0.6.37 -> 0.6.39) [CRAN]
-#> Rcpp     (1.1.0  -> 1.1.2 ) [CRAN]
-#> tibble   (3.3.0  -> 3.3.1 ) [CRAN]
-#> Installing 7 packages: rlang, glue, cli, magrittr, digest, Rcpp, tibble
-#> Installing packages into 'C:/Users/IR.5053485/AppData/Local/R/win-library/4.5'
-#> (as 'lib' is unspecified)
-#> package 'rlang' successfully unpacked and MD5 sums checked
-#> Warning: cannot remove prior installation of package 'rlang'
-#> Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying
-#> C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\00LOCK\rlang\libs\x64\rlang.dll
-#> to
-#> C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\rlang\libs\x64\rlang.dll:
-#> Permission denied
-#> Warning: restored 'rlang'
-#> package 'glue' successfully unpacked and MD5 sums checked
-#> Warning: cannot remove prior installation of package 'glue'
-#> Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying
-#> C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\00LOCK\glue\libs\x64\glue.dll
-#> to C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\glue\libs\x64\glue.dll:
-#> Permission denied
-#> Warning: restored 'glue'
-#> package 'cli' successfully unpacked and MD5 sums checked
-#> Warning: cannot remove prior installation of package 'cli'
-#> Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying
-#> C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\00LOCK\cli\libs\x64\cli.dll
-#> to C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\cli\libs\x64\cli.dll:
-#> Permission denied
-#> Warning: restored 'cli'
-#> package 'magrittr' successfully unpacked and MD5 sums checked
-#> Warning: cannot remove prior installation of package 'magrittr'
-#> Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying
-#> C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\00LOCK\magrittr\libs\x64\magrittr.dll
-#> to
-#> C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\magrittr\libs\x64\magrittr.dll:
-#> Permission denied
-#> Warning: restored 'magrittr'
-#> package 'digest' successfully unpacked and MD5 sums checked
-#> Warning: cannot remove prior installation of package 'digest'
-#> Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying
-#> C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\00LOCK\digest\libs\x64\digest.dll
-#> to
-#> C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\digest\libs\x64\digest.dll:
-#> Permission denied
-#> Warning: restored 'digest'
-#> package 'Rcpp' successfully unpacked and MD5 sums checked
-#> Warning: cannot remove prior installation of package 'Rcpp'
-#> Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying
-#> C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\00LOCK\Rcpp\libs\x64\Rcpp.dll
-#> to C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\Rcpp\libs\x64\Rcpp.dll:
-#> Permission denied
-#> Warning: restored 'Rcpp'
-#> package 'tibble' successfully unpacked and MD5 sums checked
-#> Warning: cannot remove prior installation of package 'tibble'
-#> Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying
-#> C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\00LOCK\tibble\libs\x64\tibble.dll
-#> to
-#> C:\Users\IR.5053485\AppData\Local\R\win-library\4.5\tibble\libs\x64\tibble.dll:
-#> Permission denied
-#> Warning: restored 'tibble'
-#> 
-#> The downloaded binary packages are in
-#>  C:\Users\IR.5053485\AppData\Local\Temp\RtmpwRbd8b\downloaded_packages
-#> ── R CMD build ─────────────────────────────────────────────────────────────────
-#>       ✔  checking for file 'C:\Users\IR.5053485\AppData\Local\Temp\RtmpwRbd8b\remotes5c4c44755ad6\iramosgutierrez-PlantPhyloTrees-1dc44d4/DESCRIPTION' (530ms)
-#>       ─  preparing 'PlantPhyloTrees':
-#>    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-#>       ─  checking for LF line-endings in source and make files and shell scripts
-#>   ─  checking for empty or unneeded directories
-#>      Omitted 'LazyData' from DESCRIPTION
-#>       ─  building 'PlantPhyloTrees_0.0.1.tar.gz'
-#>      
-#> 
-#> Installing package into 'C:/Users/IR.5053485/AppData/Local/R/win-library/4.5'
-#> (as 'lib' is unspecified)
 ```
 
 ## Downloading the trees
@@ -164,21 +84,22 @@ rename_tips_dir(dir = original_directory,
 
 ## Citation
 
-If using this package, please cite it:
+If using this package, please cite it, as well as the paper and the
+dataset!
 
 ``` r
 citation("PlantPhyloTrees")
-To cite templateRpackage in publications use:
+To cite PlantPhyloTrees in publications use:
 
-  Rodriguez-Sanchez F. 2023. templateRpackage.
-  https://ecologyr.github.io/templateRpackage/
+  Ramos-Gutierrez, I. 2026. PlantPhyloTrees v0.0.1
+  https://github.com/iramosgutierrez/PlantPhyloTrees/
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {templateRpackage},
-    author = {Francisco Rodriguez-Sanchez},
-    year = {2023},
-    url = {https://ecologyr.github.io/templateRpackage/},
+    title = {PlantPhyloTrees},
+    author = {Ignacio Ramos-Gutierrez},
+    year = {2026},
+    url = {https://github.com/iramosgutierrez/PlantPhyloTrees/},
   }
 ```
