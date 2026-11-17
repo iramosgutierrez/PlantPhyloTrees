@@ -9,8 +9,6 @@
 #' @export
 download_trees <- function(path){
 
-  path <- "C:/Users/IR.5053485/Downloads/zenododata/"
-
   if(!dir.exists(path)){"path directory does not exist. Please create it first."}
   tmp <- tempdir()
 
